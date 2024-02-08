@@ -6,16 +6,9 @@ import img from '../assets/vite.svg'
 function MainNavigation() {
     return (
         <header className={classes.header}>
-            <div>
-                <img src={img} alt="icon-header" height="75px" width="100px"/>
-            </div>
+            <NavLink to="/" end><img src={img} alt="icon-header" height="75px" width="100px"/></NavLink>
             <nav>
                 <ul className={classes.list}>
-                    <li>
-                        <NavLink to="/" className={({isActive}) => isActive? classes.active: undefined} end>
-                            Home
-                        </NavLink>
-                    </li>
                     <li>
                         <NavLink to="/portfolio" className={({isActive}) => isActive? classes.active: undefined}>Portfolio</NavLink>
                     </li>
