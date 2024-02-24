@@ -21,7 +21,6 @@ function PortfolioPage() {
                     <li key={portfolio.id} className="portfolio-item">
                     <button>
                         <img src={img} height="10px"/>
-                        <h3>{portfolio.title}</h3>
                     </button>
                     </li>
                 ))}
