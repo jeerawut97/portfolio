@@ -26,7 +26,7 @@ function PortfolioPage() {
                     
                         <button>
                         <Link to={portfolio.url} target="_blank" rel="noopener noreferrer">
-                            <img src={img} height="10px"/>
+                            <img src={img} />
                             <h3>{portfolio.title}</h3>
                         </Link>
                         </button>
