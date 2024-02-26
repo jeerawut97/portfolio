@@ -19,7 +19,7 @@ const PORTFOLIO = [
 function PortfolioPage() {
     return (
         <>
-            <section className="portfolio-category">
+            <section>
             <ul className="portfolio">
                 {PORTFOLIO.map((portfolio) => (
                     <li key={portfolio.id} className="portfolio-item">

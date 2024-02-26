@@ -6,7 +6,7 @@ import RootLayout from "./pages/Root.tsx";
 import ErrorPage from "./pages/Error.tsx";
 import HomePage from "./pages/Home.tsx";
 import PortfolioPage from "./pages/Portfolio.tsx";
-import AboutUsPage from "./pages/AboutUs.tsx";
+import DashboardPage from "./pages/Dashboard.tsx";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     children: [
       {index: true, element: <HomePage />},
       {path: 'portfolio', element: <PortfolioPage />},
-      {path: 'about-us', element: <AboutUsPage />},
+      {path: 'dashboard', element: <DashboardPage />},
     ],
   },
 ]);

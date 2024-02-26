@@ -37,26 +37,13 @@
   --color-primary-700: #fbc14d;
   --color-primary-800: #fab833;
   --color-primary-900: #f6ad1b;
-}
 
-body {
-  margin: 0;
-  padding: 3rem;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-main {
   margin: 2rem auto;
   text-align: center;
+  max-width: 85rem;
 }
 
 .portfolio {
-  max-width: 85rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   grid-gap: 2rem;
@@ -115,6 +102,5 @@ main {
 }
 
 .me {
-  max-width: 100%;
   height: auto;
 }
