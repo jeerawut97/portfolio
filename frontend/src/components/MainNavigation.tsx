@@ -1,19 +1,14 @@
 import { NavLink } from "react-router-dom";
 
 import classes from './MainNavigation.module.css'
-import img from '../assets/vite.svg'
+import logoHome from '../assets/applications.png'
+import logoPortfolio from '../assets/portfolio.png'
 
 function MainNavigation() {
     return (
         <header className={classes.header}>
-            <NavLink to="/" end><img src={img} alt="icon-header" height="120px" width="120px"/></NavLink>
-            <nav>
-                <ul className={classes.list}>
-                    <li>
-                        <NavLink to="/portfolio" className={({isActive}) => isActive? classes.active: undefined}>Portfolio</NavLink>
-                    </li>
-                </ul>
-            </nav>
+            <NavLink to="/" end><img src={logoHome} alt="icon-home" className={classes.img} /></NavLink>
+            <NavLink to="/portfolio" end><img src={logoPortfolio} alt="icon-portfolio" className={classes.img} /></NavLink>
         </header>
     );
 }

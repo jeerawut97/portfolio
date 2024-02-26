@@ -1,11 +1,11 @@
 .header {
     font-size: 24px;
     margin: auto;
-    max-width: 100rem;
+    max-width: 25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
     padding-bottom: 3rem;
 }
 
@@ -22,4 +22,8 @@
 .list a:hover,
 .list a.active {
     color: var(--color-primary-800);
+}
+
+.img {
+    height: 80px;
 }
