@@ -1,15 +1,6 @@
 {
   "projects": {
-    "default": "fcm-project-b44a9"
-  },
-  "targets": {
-    "fcm-project-b44a9": {
-      "hosting": {
-        "app": [
-          "jeerawut-portfolio"
-        ]
-      }
-    }
+    "default": "jeerawut-portfolio"
   },
   "etags": {}
 }
