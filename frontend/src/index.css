@@ -97,14 +97,14 @@ main {
 .portfolio-item:nth-child(odd) button:focus {
   box-shadow: 0 0 8px 4px rgba(255, 217, 0, 0.6);
   border-radius: 8px;
-  transform: rotate(15deg);
+  /* transform: rotate(15deg); */
 }
 
 .portfolio-item:nth-child(even) button:hover,
 .portfolio-item:nth-child(even) button:focus {
   box-shadow: 0 0 8px 4px rgba(255, 217, 0, 0.6);
   border-radius: 8px;
-  transform: rotate(-15deg);
+  /* transform: rotate(-15deg); */
 }
 
 .portfolio-item img {
