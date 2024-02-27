@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import classes from './MainNavigation.module.css';
 import logoHome from '/public/logo/applications.png';
 import logoPort from '/public/logo/portfolio.png';
-import classes from './MainNavigation.module.css';
+import logoDash from '/public/logo/dashboard.png';
 
 
 function MainNavigation() {
@@ -15,6 +16,14 @@ function MainNavigation() {
                 src={logoHome}
                 alt='logo-home'
               />
+            </Link>
+          </li>
+          <li>
+            <Link href='/dashboard'>
+            <Image 
+              src={logoDash}
+              alt='logo-dashboard'
+            />
             </Link>
           </li>
           <li>
