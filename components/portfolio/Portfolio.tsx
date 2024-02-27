@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
-import img from '../assets/portfolio_2.png';
+import Link from 'next/link';
+import Image from 'next/image';
+import logoPort from '/public/portfolio_2.png';
+
 
 const PORTFOLIO = [
     {id: 'p1', title: 'dice-game', url: 'https://jeerawut97.github.io/dice-game.github.io/'},
@@ -19,18 +21,19 @@ const PORTFOLIO = [
 function PortfolioPage() {
     return (
         <>
-            <section className="portfolio-category">
+            <section>
             <ul className="portfolio">
                 {PORTFOLIO.map((portfolio) => (
                     <li key={portfolio.id} className="portfolio-item">
-                    
                         <button>
-                        <Link to={portfolio.url} target="_blank" rel="noopener noreferrer">
-                            <img src={img} />
                             <h3>{portfolio.title}</h3>
-                        </Link>
+                            <Link href={portfolio.url} rel="noopener noreferrer" target="_blank">
+                                <Image 
+                                    src={logoPort}
+                                    alt='logo-port2'
+                                />
+                            </Link>
                         </button>
-                    
                     </li>
                 )).reverse()}
             </ul>
