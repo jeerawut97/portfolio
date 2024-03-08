@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Carousel = ({ images }: any) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(null);
+  const [direction, setDirection] = useState("");
 
   const slideVariants = {
     hiddenRight: {
@@ -62,7 +62,7 @@ const Carousel = ({ images }: any) => {
     );
   };
 
-  const handleDotClick = (index) => {
+  const handleDotClick = (index: number) => {
     setDirection(index > currentIndex ? "right" : "left");
     setCurrentIndex(index);
   };
@@ -120,7 +120,7 @@ const Carousel = ({ images }: any) => {
         </div>
       </div>
       <div className="carousel-indicator">
-        {images.map((_, index: number) => (
+        {images.map((_: any, index: number) => (
           <motion.div
             key={index}
             className={`dot ${currentIndex === index ? "active" : ""}`}
