@@ -1,4 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -54,6 +69,7 @@ h6 {
   right: 1rem;
   margin: 1rem auto;
   background-color: #feee86;
+  color: #242424;
   border-radius: 4px;
   padding: 0.15rem 0.35rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
@@ -78,14 +94,6 @@ h6 {
   border-radius: 0.5rem;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
-
-.App-header {
-  font-size: 1rem;
-  text-align: center;
-  font-family: "Oswald", sans-serif;
-  padding-bottom: 2rem;
-}
 .carousel-images {
   position: relative;
   border-radius: 10px;

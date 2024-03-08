@@ -1,5 +1,6 @@
 .header {
   max-width: 100%;
+  padding: 2rem;
   display: flex;
   justify-content: center;
 }
@@ -33,10 +34,3 @@
   font-size: 1.5rem;
   color: #fcb8d2;
 }
-
-.header a:hover,
-.header a:active,
-.header a.active {
-  color: white;
-}
-
