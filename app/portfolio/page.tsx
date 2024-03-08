@@ -1,4 +1,4 @@
-import Portfolio from '../../components/portfolio/Portfolio'
+import Portfolio from '../components/portfolio/Portfolio'
 
 
 function PortfolioPage() {

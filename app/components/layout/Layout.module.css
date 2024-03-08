@@ -1,0 +1,10 @@
+.main {
+  margin: auto;
+  width: 100%;
+  max-width: 30rem;
+  text-align: center;
+}
+
+.main p {
+  padding: 2rem;
+}
