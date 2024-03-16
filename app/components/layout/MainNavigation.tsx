@@ -6,7 +6,7 @@ import logoPort from '/public/portfolio.png';
 import logoDash from '/public/dashboard.png';
 
 
-function MainNavigation() {
+const MainNavigation = async function() {
   return (
     <header className={classes.header}>
       <ul>
@@ -15,6 +15,7 @@ function MainNavigation() {
               <Image 
                 src={logoHome}
                 alt='logo-home'
+                priority
               />
             </Link>
           </li>
@@ -23,6 +24,7 @@ function MainNavigation() {
               <Image 
                 src={logoDash}
                 alt='logo-dashboard'
+                priority
               />
             </Link>
           </li>
@@ -31,6 +33,7 @@ function MainNavigation() {
               <Image 
                 src={logoPort}
                 alt='logo-portfolio'
+                priority
               />
             </Link>
           </li>

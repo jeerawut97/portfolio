@@ -18,7 +18,7 @@ const PORTFOLIO = [
     {id: 'p12', title: 'react-redux-cart', url: 'https://jeerawut97.github.io/react-redux-cart/'}
 ]
 
-function PortfolioPage() {
+async function PortfolioPage() {
     return (
         <>
             <section>
@@ -31,6 +31,7 @@ function PortfolioPage() {
                                 <Image 
                                     src={logoPort}
                                     alt='logo-port2'
+                                    priority
                                 />
                             </Link>
                         </button>

@@ -7,7 +7,7 @@ const images = [
   "https://wakatime.com/share/@018ca02c-ab88-4ea4-9e74-48688ac3bbec/160b5310-ac51-4976-9863-8ea67d5fd043.png"
 ];
 
-function DashboardPage() {
+async function DashboardPage() {
   return <Carousel images={images}></Carousel>
 }
 
