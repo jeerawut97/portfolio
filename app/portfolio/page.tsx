@@ -10,7 +10,7 @@ interface Port {
 }
 
 async function getPortfolio() {
-    const response = await fetch('https://jeerawut.vercel.app/apis/portfolio');
+    const response = await fetch('https://jeerawut.vercel.app/apis/portfolio', { next: { revalidate: 3600 } });
     if (!response.ok) {
         throw new Error('cannot fetch portfolio')
     }
