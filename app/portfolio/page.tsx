@@ -10,7 +10,7 @@ interface Port {
 }
 
 async function getPortfolio() {
-    const response = await fetch('http://localhost:3000/apis/portfolio');
+    const response = await fetch('https://jeerawut.vercel.app/apis/portfolio');
     if (!response.ok) {
         throw new Error('cannot fetch portfolio')
     }
