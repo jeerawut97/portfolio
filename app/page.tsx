@@ -3,8 +3,8 @@
 import React from 'react';
 import { Breadcrumb, Layout, theme } from 'antd';
 import UICarousel from './components/ant/Carousel';
-import UICard from './components/ant/Card';
 import UIDescriptions from './components/ant/Descriptions';
+import UIFlex from './components/ant/Flex';
 
 const { Header, Content, Footer } = Layout;
 
@@ -15,18 +15,18 @@ const App: React.FC = () => {
 
   return (
     <>
-        <Layout style={{backgroundColor: '#79AFFF'}}>
+        <Layout style={{backgroundColor: '#A0A0A0', width: '80%', margin: 'auto', paddingTop: '25px'}}>
           <Breadcrumb style={{ margin: '16px 0' }} />
           <Header style={{
-            margin: 'auto',
-            width: '95%',
-            backgroundColor: '#79AFFF',
-            borderTop: '2px solid white',
-            borderBottom: '2px solid white',
-            height: '6rem',
-            alignContent: 'center'
-          }}>
-            <h1>Hello</h1>
+              margin: 'auto',
+              width: '100%',
+              backgroundColor: '#A0A0A0',
+              borderTop: '2px solid white',
+              borderBottom: '2px solid white',
+              height: '6rem',
+              alignContent: 'center'
+            }}>
+            <UIFlex />
           </Header>
           <Content style={{ padding: '0 48px' }}>
               <Breadcrumb style={{ margin: '16px 0' }} />
@@ -37,7 +37,7 @@ const App: React.FC = () => {
               <div
               style={{
                   padding: 24,
-                  minHeight: 380,
+                  minHeight: 200,
                   background: colorBgContainer,
                   borderRadius: borderRadiusLG,
               }}
@@ -45,21 +45,8 @@ const App: React.FC = () => {
               <UIDescriptions />
               </div>
           </Content>
-          <Content style={{ padding: '0 48px' }}>
-              <Breadcrumb style={{ margin: '16px 0' }} />
-              <div
-              style={{
-                  padding: 24,
-                  minHeight: 380,
-                  background: colorBgContainer,
-                  borderRadius: borderRadiusLG,
-              }}
-              >
-              <UICard />
-              </div>
-          </Content>
-          <Footer style={{ textAlign: 'center', backgroundColor: '#79AFFF', color: 'white'}}>
-              Ant Design ©{new Date().getFullYear()}
+          <Footer style={{ textAlign: 'center', backgroundColor: '#A0A0A0', color: 'white'}}>
+              Jeerawut ©{new Date().getFullYear()}
           </Footer>
         </Layout>
     </>

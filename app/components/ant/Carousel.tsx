@@ -2,18 +2,19 @@
 
 import React from 'react';
 import { Carousel } from 'antd';
+import Link from 'next/link';
 
 const contentStyle: React.CSSProperties = {
-  height: '20rem',
+  height: '15rem',
   color: '#fff',
-  lineHeight: '160px',
+  lineHeight: '200px',
   textAlign: 'center',
 };
 
 const UICarousel: React.FC = () => (
-  <Carousel autoplay>
+  <Carousel autoplay dots={false}>
     <div>
-      <h3 style={contentStyle}>1</h3>
+      <h3 style={contentStyle}><Link href="www.google.com" rel="noopener noreferrer" target="_blank">1</Link></h3>
     </div>
     <div>
       <h3 style={contentStyle}>2</h3>
@@ -23,6 +24,24 @@ const UICarousel: React.FC = () => (
     </div>
     <div>
       <h3 style={contentStyle}>4</h3>
+    </div>
+    <div>
+      <h3 style={contentStyle}>5</h3>
+    </div>
+    <div>
+      <h3 style={contentStyle}>6</h3>
+    </div>
+    <div>
+      <h3 style={contentStyle}>7</h3>
+    </div>
+    <div>
+      <h3 style={contentStyle}>8</h3>
+    </div>
+    <div>
+      <h3 style={contentStyle}>9</h3>
+    </div>
+    <div>
+      <h3 style={contentStyle}>10</h3>
     </div>
   </Carousel>
 );
