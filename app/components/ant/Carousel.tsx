@@ -12,9 +12,9 @@ const contentStyle: React.CSSProperties = {
 };
 
 const UICarousel: React.FC = () => (
-  <Carousel autoplay dots={false}>
+  <Carousel autoplay dots={true}>
     <div>
-      <h3 style={contentStyle}><Link href="www.google.com" rel="noopener noreferrer" target="_blank">1</Link></h3>
+      <h3 style={contentStyle}>1</h3>
     </div>
     <div>
       <h3 style={contentStyle}>2</h3>
