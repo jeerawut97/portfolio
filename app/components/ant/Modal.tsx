@@ -6,7 +6,7 @@ const UIModal: React.FC = () => {
 
   return (
     <>
-      <Button type="primary" onClick={() => setOpen(true)}>
+      <Button onClick={() => setOpen(true)}>
         CONTACT US
       </Button>
       <Modal

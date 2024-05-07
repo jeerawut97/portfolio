@@ -1,21 +1,19 @@
 import React from 'react';
-import { Button, Flex } from 'antd';
-import UIModal from './Modal';
-import Link from 'next/link';
+import { Flex } from 'antd';
+import UIAvatar from './Avatar';
+
 
 const boxStyle: React.CSSProperties = {
   width: '100%',
-  height: 120,
-  borderRadius: 6,
+  borderTop: '2px solid white',
+  borderBottom: '2px solid white',
+  height: '6rem',
 };
-
 const UIFlex: React.FC = () => {
   return (
     <Flex gap="middle" align="start" vertical>
       <Flex style={boxStyle} justify={'space-between'} align={'center'}>
-        Hello EIEI!
-        {/* <Link href="contact-us" rel="noopener noreferrer">Contact Us</Link> */}
-        <UIModal />
+        <UIAvatar />
       </Flex>
     </Flex>
   );

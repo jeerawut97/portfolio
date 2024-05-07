@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Carousel } from 'antd';
-import Link from 'next/link';
 
 const contentStyle: React.CSSProperties = {
   height: '15rem',
