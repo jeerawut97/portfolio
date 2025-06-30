@@ -1,0 +1,113 @@
+.main-footer {
+  background-color: #222;
+  color: #bbb;
+  padding: 40px 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border-top: 1px solid #444;
+}
+
+.main-footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+  justify-content: space-between;
+  gap: 30px; /* Space between columns */
+  margin-bottom: 30px;
+}
+
+.footer-section {
+  flex: 1; /* Each section takes equal flexible space */
+  min-width: 250px; /* Minimum width before wrapping */
+}
+
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #007bff; /* Accent line */
+  padding-bottom: 5px;
+  display: inline-block; /* Makes border-bottom fit content */
+}
+
+.footer-section p {
+  margin-bottom: 10px;
+}
+
+.footer-section .contact-info span {
+  display: block; /* Each contact info on new line */
+  margin-bottom: 8px;
+}
+
+.footer-section .contact-info i {
+  margin-right: 8px;
+  color: #007bff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+.social-links a {
+  color: #bbb;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  margin-top: 20px;
+  color: #999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .footer-section {
+    min-width: unset; /* Remove min-width on small screens */
+  }
+  .footer-section h3 {
+    border-bottom: none; /* Or adjust as desired */
+    padding-bottom: 0;
+  }
+  .footer-section ul {
+    display: inline-block; /* For horizontal lists or center lists */
+    text-align: left; /* Align list items to left if inline-block */
+  }
+  .social-links {
+    margin-top: 10px;
+  }
+}
