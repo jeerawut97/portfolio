@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { Hero } from './components/hero/hero';
+import { HeroComponent } from './components/hero/hero';
 import { ProjectsComponent } from './components/projects/projects';
-import { Header } from './components/header/header';
+import { HeaderComponent } from './components/header/header';
 import { FooterComponent } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
   imports: [
-    Header,
-    Hero,
+    HeaderComponent,
+    HeroComponent,
     ProjectsComponent,
     FooterComponent
   ],

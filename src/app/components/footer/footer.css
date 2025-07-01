@@ -1,7 +1,7 @@
 .main-footer {
   background-color: #222;
   color: #bbb;
-  padding: 40px 0;
+  padding: 10px 0;
   font-size: 0.9rem;
   line-height: 1.6;
   border-top: 1px solid #444;
@@ -17,7 +17,6 @@
   display: flex;
   flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
   justify-content: space-between;
-  gap: 30px; /* Space between columns */
   margin-bottom: 30px;
 }
 
@@ -85,7 +84,7 @@
   text-align: center;
   border-top: 1px solid #444;
   padding-top: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   color: #999;
 }
 
