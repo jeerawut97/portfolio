@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -98,5 +98,37 @@ export class ProjectsComponent {
       liveUrl: 'https://jeerawut97.github.io/react-redux-cart/',
       githubUrl: 'https://github.com/jeerawut97/react-redux-cart'
     }
-  ];
+  ].reverse();
+
+  currentPage = signal(1);
+  itemsPerPage = signal(3);
+
+  totalPages = computed(() => {
+    return Math.ceil(this.projects.length / this.itemsPerPage());
+  });
+
+  totalPagesArray = computed(() => {
+    return Array.from({ length: this.totalPages() }, (_, i) => i + 1);
+  });
+
+  paginatedProjects = computed(() => {
+    const start = (this.currentPage() - 1) * this.itemsPerPage();
+    const end = start + this.itemsPerPage();
+    return this.projects.slice(start, end);
+  });
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages()) {
+      this.currentPage.set(page);
+    }
+  }
+
+  nextPage(): void {
+    this.goToPage(this.currentPage() + 1);
+  }
+
+  previousPage(): void {
+    this.goToPage(this.currentPage() - 1);
+  }
+
 }
