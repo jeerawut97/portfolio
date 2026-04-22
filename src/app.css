@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-press-start: "Press Start 2P", system-ui;
+  --color-retro-green: #00ff41;
+  --color-retro-bg: #0d0d0d;
+  --color-retro-pink: #ff00ff;
+  --color-retro-blue: #00ffff;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.gstatic.com/s/pressstart2p/v15/e3t4svOOK-otvxv7K88gsCl8awVzWGsG.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  body {
+    @apply bg-retro-bg text-white font-press-start;
+    image-rendering: pixelated;
+  }
+}
+
+@layer components {
+  .pixel-border {
+    position: relative;
+    border: 4px solid white;
+    box-shadow: 
+      0 -4px 0 -2px white,
+      0 4px 0 -2px white,
+      -4px 0 0 -2px white,
+      4px 0 0 -2px white;
+  }
+
+  .pixel-button {
+    @apply px-6 py-3 bg-white text-black transition-all duration-100 active:translate-y-1 hover:bg-retro-green;
+    box-shadow: 
+      0 4px 0 0 #ccc,
+      0 -4px 0 0 #fff;
+  }
+
+  .pixel-button:active {
+    box-shadow: none;
+  }
+}
