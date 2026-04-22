@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/wakatime/:path*",
-      "destination": "https://wakatime.com/api/v1/:path*"
+      "destination": "/api/wakatime.js"
     }
   ]
 }
