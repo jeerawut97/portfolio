@@ -3,13 +3,12 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 import tailwindcss from '@tailwindcss/vite'
 import dotenv from 'dotenv'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 dotenv.config()
 
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    svelte(),
-  ],
+  plugins: [tailwindcss(), svelte(), cloudflare()],
   server: {
     proxy: {
       '/api/wakatime': {
