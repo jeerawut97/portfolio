@@ -14,18 +14,23 @@
     'bg-retro-green shadow-[0_0_5px_#00ff41]'
   ];
 
+  // Local-time YYYY-MM-DD (toISOString is UTC and shifts the day in UTC+7)
+  const fmt = (d) =>
+    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+
   const dayLabels = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
   onMount(async () => {
     try {
       const now = new Date();
-      const endDateStr = now.toISOString().split('T')[0];
+      const endDateStr = fmt(now);
       
       const startDate = new Date();
       startDate.setDate(now.getDate() - 364);
-      const startDateStr = startDate.toISOString().split('T')[0];
+      const startDateStr = fmt(startDate);
 
       const response = await fetch(`/api/wakatime/users/current/summaries?start=${startDateStr}&end=${endDateStr}`);
+      if (!response.ok) throw new Error("ACCESS_DENIED");
       const result = await response.json();
 
       if (result.data) {
@@ -52,10 +57,10 @@
 
     let allDays = [];
     let current = new Date(startDate);
-    const todayStr = new Date().toISOString().split('T')[0];
+    const todayStr = fmt(new Date());
 
     for (let i = 0; i < 365; i++) {
-      const dateStr = current.toISOString().split('T')[0];
+      const dateStr = fmt(current);
       const activity = dataMap.get(dateStr) || { hours: 0, text: '0 secs' };
       
       allDays.push({
@@ -69,7 +74,7 @@
       current.setDate(current.getDate() + 1);
     }
 
-    const firstDayOfWeek = new Date(allDays[0].date).getDay();
+    const firstDayOfWeek = startDate.getDay();
     for (let i = 0; i < firstDayOfWeek; i++) {
       allDays.unshift({ date: null, hours: 0, level: 0 });
     }
@@ -134,11 +139,16 @@
             <!-- svelte-ignore a11y-mouse-events-have-key-events -->
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div 
+              role={day.date ? 'img' : undefined}
+              aria-label={day.date ? `${day.date}: ${day.text || day.hours.toFixed(1) + ' hrs'}` : undefined}
+              tabindex={day.date ? 0 : undefined}
               class="w-4 h-4 md:w-5 md:h-5 {colors[day.level]} transition-all duration-100 
                      {day.date ? 'cursor-crosshair hover:ring-2 hover:ring-white hover:z-10 shadow-sm' : 'opacity-0'}
                      {day.isToday ? 'ring-2 ring-retro-blue' : ''}"
               on:mouseover={() => hoveredData = day}
               on:mouseleave={() => hoveredData = null}
+              on:focus={() => hoveredData = day}
+              on:blur={() => hoveredData = null}
             ></div>
           {/each}
         </div>
@@ -148,10 +158,12 @@
 
   <div class="mt-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/5 pt-6">
     <div class="flex items-center gap-3">
-      {#if loading}
+      {#if error}
+        <span class="text-xs text-retro-pink uppercase font-bold tracking-widest">● OFFLINE_MODE: SIMULATED_DATA</span>
+      {:else if loading}
         <span class="text-xs text-retro-blue animate-pulse font-bold tracking-widest">● CONNECTING_SATELLITE...</span>
       {:else}
-        <span class="text-xs text-retro-green uppercase font-bold tracking-widest">● SYSTEM_ONLINE: ENCRYPTED_DATA</span>
+        <span class="text-xs text-retro-green uppercase font-bold tracking-widest">● SYSTEM_ONLINE: LIVE_DATA</span>
       {/if}
     </div>
 

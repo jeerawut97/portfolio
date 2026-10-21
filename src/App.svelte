@@ -1,15 +1,17 @@
 <script>
   import ActivityCalendar from './lib/ActivityCalendar.svelte';
   let name = "RETRO PORTFOLIO";
+  const githubUrl = "https://github.com/jeerawut97";
+  const linkedinUrl = "https://www.linkedin.com/in/jeerawut-jaidee-7a0519208/";
   let subtitle = "SYSTEM OPERATOR: JEERAWUT";
 </script>
 
 <main class="min-h-screen bg-retro-bg flex flex-col items-center p-4 md:p-8 relative overflow-hidden text-white">
   <!-- Scanline Overlay -->
-  <div class="scanlines pointer-events-none fixed inset-0 z-50"></div>
+  <div aria-hidden="true" class="scanlines pointer-events-none fixed inset-0 z-50"></div>
   
   <!-- CRT Flicker Effect -->
-  <div class="crt-flicker pointer-events-none fixed inset-0 z-40 bg-white/5 opacity-20"></div>
+  <div aria-hidden="true" class="crt-flicker pointer-events-none fixed inset-0 z-40 bg-white/5 opacity-20"></div>
 
   <!-- Main Container -->
   <div class="z-10 w-full max-w-6xl flex flex-col gap-8 md:gap-12">
@@ -43,8 +45,8 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-          <button class="pixel-button text-xs md:text-sm py-4">VIEW_PROJECTS</button>
-          <button class="pixel-button hover:bg-retro-pink text-xs md:text-sm py-4">CONTACT_ME</button>
+          <a href={githubUrl + "?tab=repositories"} target="_blank" rel="noopener noreferrer" class="pixel-button text-center text-xs md:text-sm py-4">VIEW_PROJECTS</a>
+          <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="pixel-button text-center hover:bg-retro-pink text-xs md:text-sm py-4">CONTACT_ME</a>
         </div>
       </div>
     </div>
@@ -56,14 +58,14 @@
 
     <!-- Footer: Social Links -->
     <footer class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 py-12 border-t-2 border-white/5">
-      <a href="https://github.com/jeerawut97" class="text-retro-blue hover:text-white transition-colors text-xs md:text-sm tracking-[0.2em] font-bold hover:scale-110">GITHUB</a>
-      <a href="https://www.linkedin.com/in/jeerawut-jaidee-7a0519208/" class="text-retro-blue hover:text-white transition-colors text-xs md:text-sm tracking-[0.2em] font-bold hover:scale-110">LINKEDIN</a>
+      <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="text-retro-blue hover:text-white transition-colors text-xs md:text-sm tracking-[0.2em] font-bold hover:scale-110">GITHUB</a>
+      <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" class="text-retro-blue hover:text-white transition-colors text-xs md:text-sm tracking-[0.2em] font-bold hover:scale-110">LINKEDIN</a>
       <p class="text-white/30 text-[10px] md:text-xs tracking-widest ml-auto hidden md:block">EST. 199X</p>
     </footer>
   </div>
 
   <!-- Background Decorative Elements -->
-  <div class="fixed bottom-0 left-0 w-full h-96 bg-gradient-to-t from-retro-blue/10 to-transparent pointer-events-none"></div>
+  <div aria-hidden="true" class="fixed bottom-0 left-0 w-full h-96 bg-gradient-to-t from-retro-blue/10 to-transparent pointer-events-none"></div>
 </main>
 
 <style>
@@ -82,7 +84,7 @@
   }
 
   .crt-flicker {
-    animation: flicker 0.2s infinite;
+    animation: flicker 0.6s infinite;
   }
 
   @keyframes flicker {
@@ -118,6 +120,12 @@
     text-shadow: -3px 0 #00ffff;
     clip: rect(44px, 450px, 56px, 0);
     animation: glitch-anim2 5s infinite linear alternate-reverse;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .crt-flicker { animation: none; }
+    .glitch::before,
+    .glitch::after { display: none; }
   }
 
   @keyframes glitch-anim {
